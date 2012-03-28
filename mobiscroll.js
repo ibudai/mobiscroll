@@ -630,7 +630,7 @@
             dw.width(w);
             w = dw.outerWidth();
             h = dw.outerHeight();
-            dw.css({ left: (ww - w) / 2, top: st + (wh - h) / 2 });
+            dw.css({ left: (ww - w) / 2, top: s.positionBottom ? st + (wh - h) : st + (wh - h) / 2 });
             dwo.height(0);
             dwo.height($(document).height());
         }
@@ -714,6 +714,7 @@
             showOnFocus: true,
             showValue: true,
             showLabel: true,
+            positionBottom: false,
             wheels: null,
             theme: '',
             mode: 'scroller',
@@ -794,6 +795,7 @@
                         defs.width = 55;
                         defs.showValue = false;
                         defs.showLabel = false;
+                        defs.positionBottom = true,
                         break;
                     case 'android':
                         defs.dateOrder = 'Mddyy';
